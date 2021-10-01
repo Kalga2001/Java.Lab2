@@ -1,0 +1,52 @@
+package com.company;
+import java.util.Scanner;
+
+public class Account
+ {
+     private String name; // instance variable
+     private double balance;
+     private double DepositAmount;
+     public Account(String name,double balance)
+     {
+         this.name=name;
+         if(balance>0.00)
+             this.balance=balance;
+
+     }
+     public void deposit(double DepositAmount)
+     {
+         if(DepositAmount>0.00)
+             balance=balance+DepositAmount;
+     }
+     public double getBalance()
+     {
+         return balance;
+     }
+     public void setName(String name)
+     {
+         this.name = name;
+     }
+     public String getName()
+    {
+        return  name;
+    }
+     public void DisplayAccount(Account account1)
+    {
+        System.out.println("Имя: "+account1.getName()+ " " +"Баланс: "+ account1.getBalance());
+    }
+ }
+
+
+Main:
+package com.company;
+import java.time.Year;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Account account1 = new Account("Jane Green", 50.00);
+        Account account2 = new Account("John Blue", -7.53);
+        double depositAmount = input.nextDouble();
+        account1.DisplayAccount(account1);
+    }
+}
